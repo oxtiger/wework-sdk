@@ -1,0 +1,19 @@
+# OSX files
+**/.DS_Store
+!.gitignore
+
+# IDE
+.idea
+
+# DB
+*.sqlite
+
+# Executable program
+core
+go_build*
+count.out
+.air.toml
+config.conf
+privkey.pem
+fullchain.pem
+run.sh
