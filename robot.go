@@ -151,7 +151,7 @@ func RobotUploadFile(robotId, filepath, filename string) (string, error) {
 		return "", err
 	}
 	if errRes.MediaId == "" {
-		return "", fmt.Errorf("failed to upload files")
+		return "", fmt.Errorf("errCode %d, errMsg %s", errRes.ErrCode, errRes.ErrMsg)
 	}
 	return errRes.MediaId, nil
 }
