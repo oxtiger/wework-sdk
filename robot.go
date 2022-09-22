@@ -59,6 +59,9 @@ func RobotPushText(robotId string, content string, atUser ...string) error {
 	if err != nil {
 		return err
 	}
+	if errRes.ErrCode != 0 {
+		return fmt.Errorf("code: %d, msg: %s", errRes.ErrCode, errRes.ErrMsg)
+	}
 	return nil
 }
 
@@ -78,6 +81,9 @@ func RobotPushMarkdown(robotId string, content string) error {
 	if err != nil {
 		return err
 	}
+	if errRes.ErrCode != 0 {
+		return fmt.Errorf("code: %d, msg: %s", errRes.ErrCode, errRes.ErrMsg)
+	}
 	return nil
 }
 
@@ -95,6 +101,9 @@ func RobotPushFile(robotId string, mediaId string) error {
 	err = json.Unmarshal(res, &errRes)
 	if err != nil {
 		return err
+	}
+	if errRes.ErrCode != 0 {
+		return fmt.Errorf("code: %d, msg: %s", errRes.ErrCode, errRes.ErrMsg)
 	}
 	return nil
 }
